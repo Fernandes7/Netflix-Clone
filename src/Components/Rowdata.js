@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import "./Rowdata.css"
-function Rowdata({title,fetch}) {
+function Rowdata({title,fetch,addtofav}) {
     const [rowmovie,setrowmovies]=useState()
     const [fovoritestatus,setfavorite]=useState("Add to Favorite")
     const fav=()=>{
         if(fovoritestatus==="Add to Favorite")
         setfavorite("Added To Favorite")
         else
-        setfavorite("Add to Favorite")
+        setfavorite("Already added to favorite")
     }
     useEffect(()=>{
     axios.get(fetch).then((responce)=>{
@@ -27,13 +27,12 @@ function Rowdata({title,fetch}) {
                 <div className='rowimage'>
                 <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt="images"></img>
                 </div>
-                <div className='imageback' onClick={fav}>
-                <p>{fovoritestatus}</p>
+                <div className='imageback' onClick={()=>{console.log("lookin",item);addtofav(item);fav()}}>
+                <p >{fovoritestatus}</p>
                 </div>
                 </div>
             )}
-        }):<h1>helloo</h1>}</div>
-        
+        }):<h1>helloo</h1>}</div> 
     </div>
   )
 }

@@ -7,6 +7,8 @@ import Homedata from './Homedata'
 import Signup from './Signup'
 import Login from './Login'
 import Authavbar from './Authnavbar'
+import Addtofavorite from './Addtofavorite'
+import Account from './Account'
 function Home() {
     const [authpopup,setauthpopup]=useState(false)
     const [navbar,setnavbar]=useState(true)
@@ -37,13 +39,13 @@ function Home() {
     },[])
   return (
     <div>
-    {movies ? <Homedata length={movies.length} movies={movies}/>:<h2>loading....</h2>}
+    {movies ? <Homedata length={movies.length} movies={movies}/>:<h2 className='loading'>Loading....</h2>}
     <Router>
       <Routes>
         <Route path="/" element={<Navebar popup={popup} />} />
         <Route path="/signin" element={<Signup popup={popup} />} />
         <Route path="/login" element={<Login popup={popup} />} />
-        <Route path="/account" element={<Authavbar />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
     </div>

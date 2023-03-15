@@ -5,3 +5,8 @@ img{
 body{
     color:white;
 }
+.loading{
+    text-align: center;
+    font-family: Poppins;
+    font-size:xx-large;
+}
