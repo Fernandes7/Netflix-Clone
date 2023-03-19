@@ -7,7 +7,7 @@ function Login(props) {
     const [pass,setPass]=useState()
     const history=useNavigate()
     const handle=()=>{
-        axios.post("http://localhost:3001/login",{name:name,pass:pass}).then((responce)=>{
+        axios.post("http://localhost:8000/auth/login",{email:name,password:pass}).then((responce)=>{
             if(responce.data!=="PI" && responce.data!=="NU")
             {
                 console.log("ferno",responce)

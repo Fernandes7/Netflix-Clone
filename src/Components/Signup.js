@@ -8,7 +8,7 @@ function Signup(props) {
     const [Password,setPass]=useState()
     const history=useNavigate()
     const handle=()=>{
-        axios.post("http://localhost:3001/signin",{name:Name,email:Email,pass:Password}).then((responce)=>{
+        axios.post("http://localhost:8000/auth/signup",{name:Name,email:Email,password:Password}).then((responce)=>{
             if(responce.data==="success")
             {
             alert("Please Login Now")
