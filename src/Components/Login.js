@@ -10,7 +10,6 @@ function Login(props) {
         axios.post("http://localhost:8000/auth/login",{email:name,password:pass}).then((responce)=>{
             if(responce.data!=="PI" && responce.data!=="NU")
             {
-                console.log("ferno",responce)
                 history("/account",{state:{data:responce.data}})
             }
             else

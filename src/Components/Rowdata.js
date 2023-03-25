@@ -27,7 +27,7 @@ function Rowdata({title,fetch,addtofav}) {
                 <div className='rowimage'>
                 <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt="images"></img>
                 </div>
-                <div className='imageback' onClick={()=>{console.log("lookin",item);addtofav(item);fav()}}>
+                <div className='imageback' onClick={()=>{addtofav(item);fav()}}>
                 <p >{fovoritestatus}</p>
                 </div>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Addtofavorite.css"
 function Addtofavorite(props) {
+  console.log("props data",props.data)
   let favdata=props.data.map((item,key)=>{
       if(key>0)
       return(

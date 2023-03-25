@@ -13,7 +13,6 @@ function Signup(props) {
             {
             alert("Please Login Now")
             history("/login")
-            console.log("name",responce)
             }
             else
             alert("User already Exist")

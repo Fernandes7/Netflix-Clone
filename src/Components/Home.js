@@ -33,7 +33,6 @@ function Home() {
     }
     useEffect(()=>{
         axios.get("https://api.themoviedb.org/3/movie/upcoming?api_key=75a8869c6b1150c34778fef169997cb1&language=en-US&page=1").then((responce)=>{
-            console.log(responce.data.results)
             setMovies(responce.data.results)
         })
     },[])
